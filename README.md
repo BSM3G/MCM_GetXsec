@@ -1,5 +1,7 @@
 # MCM_GetXsec
 
+It is not suggested to run this on a remote machine at places such as LPC or LXPLUS because of sudo privileges needed and the slow nature of X11 on these computers.
+
 There are quite a few dependencies to run this repo.  There are different headless (aka graphicless) webbrowsers that exist, namely 
 PhantomJS, but the mcm page has untrusted certifications that stop the program from crawling through the pages.  Firefox has the ability
 to ignore these warnings, but it only works currently with the developmental version of firefox (the "nightly" version).  This can be 
@@ -8,12 +10,12 @@ run with visuals which is slightly slower and requires no sudo privileges, but w
 The option to run with or without visuals is available when setting up the files.
 
 ### Dependencies
-Python
--- selenium
--- pyvisualdisplay
-firefox (nightly version)
--- geckodriver
-xvfb
+- Python
+ - selenium
+ - pyvisualdisplay
+- firefox (nightly version)
+ - geckodriver
+- xvfb
 
 All of these programs are check for and installed when running the setup program.
 
@@ -34,7 +36,7 @@ must be done by the user or will be updated in later versions.
 There are a few values that can be changed to get different results.  First is the options.
 
 There is a variable, `shown_list` that is a list of all the possible values that can be shown in the table.  The ones you wish to have 
-in your output are put into `shown_wants'.  Simply put all of the options you want into the `shown_wants` array.  Be warned, the program
+in your output are put into `shown_wants`.  Simply put all of the options you want into the `shown_wants` array.  Be warned, the program
 only looks for rows that have values in each column, so if certain options are picked, samples may be ignored because they don't have
 a value in every column.
 
